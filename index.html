@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f2f2f2;
+    }
+    #quote-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="quote-box">
+    <p id="quote">Click the button for a quote!</p>
+    <button onclick="getRandomQuote()">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there.",
+      "Stay hungry, stay foolish.",
+      "You miss 100% of the shots you don't take.",
+      "The best way to predict the future is to invent it.",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts."
+    ];
+
+    function getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
